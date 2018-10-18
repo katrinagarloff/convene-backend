@@ -2,7 +2,7 @@
 
 class QueriesController < ApplicationController
   def create
-    base_url = "https://api.meetup.com/find/upcoming_events?key=#{THE_KEY}&"
+    base_url = "https://api.meetup.com/find/upcoming_events?key=#{ENV['MEETUP_KEY']}&"
     # lat=40.700518&lon=-73.929678&radius=5&page=20
     # lat: params[:term][:lat], lon: params[:term][:lon]
     @query = Query.new(lat: params[:term][:lat], lon: params[:term][:lon])
